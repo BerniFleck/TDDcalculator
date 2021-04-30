@@ -70,7 +70,7 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 - [x] add positive to positive number returns positive
 - [x] add smaller negative to bigger positive number returns positive
 - [x] add negative to negative number returns negative
-- [ ] add zero to positive number returns positive
+- [x] add zero to positive number returns positive
 - [ ] add zero to negative number returns negative
 - [ ] add positive number to zero returns positive
 - [ ] add negative number to zero returns negative

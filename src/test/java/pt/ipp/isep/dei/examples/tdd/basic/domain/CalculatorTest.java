@@ -2,8 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -44,6 +43,14 @@ public class CalculatorTest {
         fail("a disabled failing test");
     }
 
+    private boolean isPositive(int number) {
+        return number > 0;
+    }
+
+    private boolean isNegative(int number) {
+        return number < 0;
+    }
+
     /**
      * Test to ensure two positive numbers are summed correctly.<p>
      * <p>
@@ -53,7 +60,7 @@ public class CalculatorTest {
      * Assert: the result is five.
      */
     @Test
-    public void ensureThreePlusTwoEqualsFive() {
+    public void ensurePositiveNumberPlusPositiveNumberIsPositive() {
 
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
@@ -81,7 +88,7 @@ public class CalculatorTest {
      * Assert the sum result should be one.
      */
     @Test
-    public void ensureThreePlusMinusTwoEqualsOne() {
+    public void ensureBiggerPositiveNumberPlusSmallerNegativeNumberIsPositive() {
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
         }.getClass().getEnclosingMethod().getName() + " Test");
@@ -100,7 +107,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void ensureMinusThreePlusMinusTwoEqualsMinusFive(){
+    public void ensureNegativeNumberPlusNegativeNumberIsNegative() {
         //Arrange
         int firstOperand = -3;
         int secondOperand = -2;
@@ -113,6 +120,23 @@ public class CalculatorTest {
         // Assert
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void ensurePositiveNrPlusZeroIsPositiveNumber() {
+        //Arrange
+        int firstOperand = 3;
+        int secondOperand = 0;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.sum(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
 }
 
 
