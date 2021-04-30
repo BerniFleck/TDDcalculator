@@ -65,3 +65,44 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 * https://github.com/pitest/pitest-junit5-plugin
   - https://mvnrepository.com/artifact/org.pitest/pitest-junit5-plugin
     - required to work with JUnit5
+
+## Test sum method
+- [ ] add positive to positive number returns positive
+- [ ] add positive to negative number returns negative
+- [ ] add negative to positive number returns negative
+- [ ] add negative to negative number
+- [ ] add zero to positive number
+- [ ] add zero to negative number
+- [ ] add positive number to zero
+- [ ] add negative number to zero
+
+## Test subtract method
+- [ ] subtract bigger positive from smaller positive number returns negative number
+- [ ] subtract smaller positive from bigger positive number returns positive number
+- [ ] subtract equal negative from equal positive number returns positive number
+- [ ] subtract equal positive from equal negative number returns negative number
+- [ ] subtract 2 equal negative numbers from each other returns zero
+- [ ] subtract 2 equal positive numbers from each other returns zero
+- [ ] subtract bigger positive from smaller negative number returns negative number
+- [ ] subtract smaller positive from bigger negative number returns negative number
+- [ ] subtract smaller negative from bigger positive number
+- [ ] subtract negative from negative number
+- [ ] subtract zero from positive number
+- [ ] subtract zero from negative number
+- [ ] subtract positive number from zero
+- [ ] subtract negative number from zero
+
+## Test divide method
+- [ ] divide positive by positive number returns positive number
+- [ ] divide positive by negative number returns negative number
+- [ ] divide negative by positive number returns negative number
+- [ ] divide negative by negative number returns positive number
+- [ ] divide zero by positive number returns zero
+- [ ] divide zero by negative number returns zero
+- [ ] divide positive number by zero returns exception
+- [ ] divide negative number by zero returns exception
+
+
+## Test multiply method
+
+## Test factorial method
