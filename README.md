@@ -67,10 +67,9 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
     - required to work with JUnit5
 
 ## Test sum method
-- [ ] add positive to positive number returns positive
-- [ ] add positive to negative number returns negative ??
-- [ ] add negative to positive number returns negative ??
-- [ ] add negative to negative number returns negative
+- [x] add positive to positive number returns positive
+- [x] add smaller negative to bigger positive number returns positive
+- [x] add negative to negative number returns negative
 - [ ] add zero to positive number returns positive
 - [ ] add zero to negative number returns negative
 - [ ] add positive number to zero returns positive

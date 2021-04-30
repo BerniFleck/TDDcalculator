@@ -7,11 +7,14 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class CalculatorTest {
 
+    private static Calculator calculator;
+
     @BeforeAll
     public static void classSetUp() {
         //HACK: for demonstration purposes only
         System.out.println(
                 "This is a CalculatorTest class method and takes place before any @Test is executed");
+        calculator = new Calculator();
     }
 
     @AfterAll
@@ -63,7 +66,7 @@ public class CalculatorTest {
         int result = 3;
 
         // Act
-        result = new Calculator().sum(firsOperand, secondOperand);
+        result = calculator.sum(firsOperand, secondOperand);
 
         // Assert
         assertEquals(expectedResult, result);
@@ -84,16 +87,31 @@ public class CalculatorTest {
         }.getClass().getEnclosingMethod().getName() + " Test");
 
         // Arrange
-        int firsOperand = 3;
+        int firstOperand = 3;
         int secondOperand = -2;
         int expectedResult = 1;
         int result = 3;
 
         // Act
-        result = new Calculator().sum(firsOperand, secondOperand);
+        result = calculator.sum(firstOperand, secondOperand);
 
         // Assert
         assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMinusThreePlusMinusTwoEqualsMinusFive(){
+        //Arrange
+        int firstOperand = -3;
+        int secondOperand = -2;
+        int expectedResult = -5;
+        int actualResult;
+
+        // Act
+        actualResult = calculator.sum(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
     }
 }
 
