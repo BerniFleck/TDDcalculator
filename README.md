@@ -68,13 +68,13 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 
 ## Test sum method
 - [ ] add positive to positive number returns positive
-- [ ] add positive to negative number returns negative
-- [ ] add negative to positive number returns negative
-- [ ] add negative to negative number
-- [ ] add zero to positive number
-- [ ] add zero to negative number
-- [ ] add positive number to zero
-- [ ] add negative number to zero
+- [ ] add positive to negative number returns negative ??
+- [ ] add negative to positive number returns negative ??
+- [ ] add negative to negative number returns negative
+- [ ] add zero to positive number returns positive
+- [ ] add zero to negative number returns negative
+- [ ] add positive number to zero returns positive
+- [ ] add negative number to zero returns negative
 
 ## Test subtract method
 - [ ] subtract bigger positive from smaller positive number returns negative number
@@ -102,7 +102,15 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 - [ ] divide positive number by zero returns exception
 - [ ] divide negative number by zero returns exception
 
-
 ## Test multiply method
+- [ ] multiply positive with positive number returns positive number
+- [ ] multiply positive with negative number returns negative number
+- [ ] multiply negative with positive number returns negative number
+- [ ] multiply negative with negative number returns positive number
+- [ ] multiply zero with positive number returns zero
+- [ ] multiply zero with negative number returns zero
 
 ## Test factorial method
+- [ ] positive number factored returns positive number
+- [ ] negative number factored returns 1
+- [ ] zero factored returns 1
