@@ -17,8 +17,8 @@ public class Calculator {
         return firstOperand + secondOperand;
     }
 
-    public int subtract(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+    public int subtractFirstOperandFromSecondOne(int firstOperand, int secondOperand) {
+        return secondOperand - firstOperand;
     }
 
     public int divide(int dividend, int divisor) {
@@ -29,7 +29,7 @@ public class Calculator {
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        return firstOperand * secondOperand;
     }
 
     public int factorial(int firstOperand) {

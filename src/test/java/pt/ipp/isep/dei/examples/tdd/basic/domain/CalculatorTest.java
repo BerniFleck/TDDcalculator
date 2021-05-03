@@ -1,8 +1,11 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CalculatorTest {
 
@@ -37,12 +40,6 @@ public class CalculatorTest {
                 "\tThis call takes place after each @Test is executed");
     }
 
-    @Test
-    @Disabled
-    public void failingTest() {
-        fail("a disabled failing test");
-    }
-
     private boolean isPositive(int number) {
         return number > 0;
     }
@@ -60,7 +57,7 @@ public class CalculatorTest {
      * Assert: the result is five.
      */
     @Test
-    public void ensurePositiveNumberPlusPositiveNumberIsPositive() {
+    public void ensurePositiveNrPlusPositiveNrIsPositive() {
 
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
@@ -88,7 +85,7 @@ public class CalculatorTest {
      * Assert the sum result should be one.
      */
     @Test
-    public void ensureBiggerPositiveNumberPlusSmallerNegativeNumberIsPositive() {
+    public void ensureBiggerPositiveNrPlusSmallerNegativeNrIsPositive() {
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
         }.getClass().getEnclosingMethod().getName() + " Test");
@@ -107,7 +104,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void ensureNegativeNumberPlusNegativeNumberIsNegative() {
+    public void ensureNegativeNrPlusNegativeNrIsNegative() {
         //Arrange
         int firstOperand = -3;
         int secondOperand = -2;
@@ -137,6 +134,132 @@ public class CalculatorTest {
         assertTrue(isResultPositive);
     }
 
+    @Test
+    public void ensureBiggerPositiveNrSubtractedFromSmallerPositiveNrIsNegative() {
+        //Arrange
+        int firstOperand = 3;
+        int secondOperand = 2;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensureSmallerPositiveNrSubtractedFromBiggerPositiveNrIsPositive() {
+        //Arrange
+        int firstOperand = 2;
+        int secondOperand = 3;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    @Test
+    public void ensureNegativeNrSubtractedFromEqualPositiveNrIsPositive() {
+        //Arrange
+        int firstOperand = -3;
+        int secondOperand = 3;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    @Test
+    public void ensurePositiveNrSubtractedFromEqualNegativeNrIsNegative() {
+        //Arrange
+        int firstOperand = 4;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensurePositiveNrMultipliedByNegativeNrIsNegative() {
+        //Arrange
+        int firstOperand = 4;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensureNegativeNrMultipliedByPositiveNrIsNegative() {
+        //Arrange
+        int firstOperand = -4;
+        int secondOperand = 5;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensureNegativeNrMultipliedByNegativeNrIsPositive() {
+        // Arrange
+        int firstOperand = -4;
+        int secondOperand = -5;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-15, 0, 1, 2, 15, Integer.MAX_VALUE, Integer.MIN_VALUE})
+    public void ensureAnyNrMultipliedByZeroIsZero(int firstOperand) {
+        // Arrange
+        int secondOperand = 0;
+        int expectedResult = 0;
+        int actualResult;
+
+        // Act
+        actualResult = calculator.multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(actualResult, expectedResult);
+    }
     /*
     divide positive by positive number returns positive number
     */

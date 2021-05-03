@@ -69,17 +69,17 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 ## Test sum method
 - [x] add positive to positive number returns positive
 - [x] add smaller negative to bigger positive number returns positive
-- [x] add negative to negative number returns negative
 - [x] add zero to positive number returns positive
+- [x] add negative to negative number returns negative
 - [ ] add zero to negative number returns negative
 - [ ] add positive number to zero returns positive
 - [ ] add negative number to zero returns negative
 
 ## Test subtract method
-- [ ] subtract bigger positive from smaller positive number returns negative number
-- [ ] subtract smaller positive from bigger positive number returns positive number
-- [ ] subtract equal negative from equal positive number returns positive number
-- [ ] subtract equal positive from equal negative number returns negative number
+- [x] subtract bigger positive from smaller positive number returns negative number
+- [x] subtract smaller positive from bigger positive number returns positive number
+- [x] subtract negative from equal positive number returns positive number
+- [x] subtract positive from equal negative number returns negative number
 - [ ] subtract 2 equal negative numbers from each other returns zero
 - [ ] subtract 2 equal positive numbers from each other returns zero
 - [ ] subtract bigger positive from smaller negative number returns negative number
@@ -103,11 +103,13 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 
 ## Test multiply method
 - [ ] multiply positive with positive number returns positive number
-- [ ] multiply positive with negative number returns negative number
-- [ ] multiply negative with positive number returns negative number
-- [ ] multiply negative with negative number returns positive number
-- [ ] multiply zero with positive number returns zero
-- [ ] multiply zero with negative number returns zero
+- [x] multiply positive with negative number returns negative number
+- [x] multiply negative with positive number returns negative number
+- [x] multiply negative with negative number returns positive number
+- [x] multiply zero with positive number returns zero [^1]
+- [x] multiply zero with negative number returns zero [^1]
+
+[^1] accomplished in a parameterized test
 
 ## Test factorial method
 - [ ] positive number factored returns positive number
