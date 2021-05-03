@@ -69,8 +69,8 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 ## Test sum method
 - [x] add positive to positive number returns positive
 - [x] add smaller negative to bigger positive number returns positive
-- [x] add negative to negative number returns negative
 - [x] add zero to positive number returns positive
+- [x] add negative to negative number returns negative
 - [ ] add zero to negative number returns negative
 - [ ] add positive number to zero returns positive
 - [ ] add negative number to zero returns negative
@@ -106,8 +106,10 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 - [x] multiply positive with negative number returns negative number
 - [x] multiply negative with positive number returns negative number
 - [x] multiply negative with negative number returns positive number
-- [x] multiply zero with positive number returns zero
-- [ ] multiply zero with negative number returns zero
+- [x] multiply zero with positive number returns zero [^1]
+- [x] multiply zero with negative number returns zero [^1]
+
+[^1] accomplished in a parameterized test
 
 ## Test factorial method
 - [ ] positive number factored returns positive number

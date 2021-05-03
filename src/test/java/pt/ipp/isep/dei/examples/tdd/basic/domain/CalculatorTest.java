@@ -1,6 +1,8 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -244,10 +246,10 @@ public class CalculatorTest {
         assertTrue(isResultPositive);
     }
 
-    @Test
-    public void ensurePositiveNrMultipliedByZeroIsZero() {
+    @ParameterizedTest
+    @ValueSource(ints = {-15, 0, 1, 2, 15, Integer.MAX_VALUE, Integer.MIN_VALUE})
+    public void ensureAnyNrMultipliedByZeroIsZero(int firstOperand) {
         // Arrange
-        int firstOperand = 4;
         int secondOperand = 0;
         int expectedResult = 0;
         int actualResult;
