@@ -137,6 +137,94 @@ public class CalculatorTest {
         assertTrue(isResultPositive);
     }
 
+    /*
+    divide positive by positive number returns positive number
+    */
+    @Test
+    public void ensurePositiveNrDividedByPositiveNrIsPositive() {
+        // Arrange
+        int firstOperand = 12;
+        int secondOperand = 4;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.divide(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    /*
+    divide positive by negative number returns negative number
+    */
+    @Test
+    public void ensurePositiveNrDividedByNegativeNrIsNegative() {
+        // Arrange
+        int firstOperand = 12;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.divide(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    /*
+    divide negative by positive number returns negative number
+    */
+    @Test
+    public void ensureNegativeNrDividedByPositiveNrIsNegative() {
+        // Arrange
+        int firstOperand = -12;
+        int secondOperand = 4;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.divide(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    /*
+    divide negative by negative number returns positive number
+    */
+    @Test
+    public void ensureNegativeNrDividedByNegativeNrIsPositive() {
+        // Arrange
+        int firstOperand = -12;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.divide(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    /*
+    divide positive number by zero returns exception
+    */
+    @Test
+    public void ensurePositiveNrDividedByZeroReturnsException() {
+        // Arrange
+        int firstOperand = 12;
+        int secondOperand = 0;
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(firstOperand, secondOperand));
+    }
 }
 
 

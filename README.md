@@ -92,13 +92,13 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 - [ ] subtract negative number from zero
 
 ## Test divide method
-- [ ] divide positive by positive number returns positive number
-- [ ] divide positive by negative number returns negative number
-- [ ] divide negative by positive number returns negative number
-- [ ] divide negative by negative number returns positive number
+- [x] divide positive by positive number returns positive number
+- [x] divide positive by negative number returns negative number
+- [x] divide negative by positive number returns negative number
+- [x] divide negative by negative number returns positive number
 - [ ] divide zero by positive number returns zero
 - [ ] divide zero by negative number returns zero
-- [ ] divide positive number by zero returns exception
+- [x] divide positive number by zero returns exception
 - [ ] divide negative number by zero returns exception
 
 ## Test multiply method

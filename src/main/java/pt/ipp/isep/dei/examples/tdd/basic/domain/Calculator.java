@@ -22,7 +22,10 @@ public class Calculator {
     }
 
     public int divide(int dividend, int divisor) {
-        throw new UnsupportedOperationException();
+        if (divisor == 0)
+            throw new IllegalArgumentException("Illegal Argument. Divisor must not be zero.");
+        else
+            return dividend / divisor;
     }
 
     public int multiply(int firstOperand, int secondOperand) {
