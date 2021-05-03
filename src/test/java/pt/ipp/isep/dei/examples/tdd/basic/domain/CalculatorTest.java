@@ -180,21 +180,83 @@ public class CalculatorTest {
         assertTrue(isResultPositive);
     }
 
-    //subtract positive from equal negative number returns negative number
     @Test
     public void ensurePositiveNrSubtractedFromEqualNegativeNrIsNegative() {
         //Arrange
         int firstOperand = 4;
         int secondOperand = -4;
         int calculationResult;
-        boolean isResultPositive;
+        boolean isResultNegative;
 
         // Act
         calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
-        isResultPositive = isNegative(calculationResult);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensurePositiveNrMultipliedByNegativeNrIsNegative() {
+        //Arrange
+        int firstOperand = 4;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensureNegativeNrMultipliedByPositiveNrIsNegative() {
+        //Arrange
+        int firstOperand = -4;
+        int secondOperand = 5;
+        int calculationResult;
+        boolean isResultNegative;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultNegative = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultNegative);
+    }
+
+    @Test
+    public void ensureNegativeNrMultipliedByNegativeNrIsPositive() {
+        // Arrange
+        int firstOperand = -4;
+        int secondOperand = -5;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.multiply(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
 
         // Assert
         assertTrue(isResultPositive);
+    }
+
+    @Test
+    public void ensurePositiveNrMultipliedByZeroIsZero() {
+        // Arrange
+        int firstOperand = 4;
+        int secondOperand = 0;
+        int expectedResult = 0;
+        int actualResult;
+
+        // Act
+        actualResult = calculator.multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(actualResult, expectedResult);
     }
 }
 

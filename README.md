@@ -103,10 +103,10 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 
 ## Test multiply method
 - [ ] multiply positive with positive number returns positive number
-- [ ] multiply positive with negative number returns negative number
-- [ ] multiply negative with positive number returns negative number
-- [ ] multiply negative with negative number returns positive number
-- [ ] multiply zero with positive number returns zero
+- [x] multiply positive with negative number returns negative number
+- [x] multiply negative with positive number returns negative number
+- [x] multiply negative with negative number returns positive number
+- [x] multiply zero with positive number returns zero
 - [ ] multiply zero with negative number returns zero
 
 ## Test factorial method

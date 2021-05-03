@@ -26,7 +26,7 @@ public class Calculator {
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        return firstOperand * secondOperand;
     }
 
     public int factorial(int firstOperand) {
