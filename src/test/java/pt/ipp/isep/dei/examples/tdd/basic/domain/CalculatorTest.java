@@ -36,13 +36,7 @@ public class CalculatorTest {
         System.out.println(
                 "\tThis call takes place after each @Test is executed");
     }
-
-    @Test
-    @Disabled
-    public void failingTest() {
-        fail("a disabled failing test");
-    }
-
+    
     private boolean isPositive(int number) {
         return number > 0;
     }
