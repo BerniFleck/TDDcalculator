@@ -114,4 +114,13 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 ## Test factorial method
 - [x] positive number factored returns positive number
 - [x] negative number factored returns 1
-- [ ] zero factored returns 1
+- [x] zero factored returns 1
+
+# Parser
+## Test return behaviour
+- [ ] f returns >
+- [ ] r returns o
+- [ ] p returns x
+- [ ] frp returns >ox
+- [ ] FrP returns >ox
+- [ ] frrrp returns >ooox
