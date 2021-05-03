@@ -118,9 +118,11 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 
 # Parser
 ## Test return behaviour
-- [ ] f returns >
-- [ ] r returns o
-- [ ] p returns x
-- [ ] frp returns >ox
-- [ ] FrP returns >ox
-- [ ] frrrp returns >ooox
+- [x] f returns >
+- [x] r returns o
+- [x] p returns x
+- [x] frp returns >ox
+- [x] FrP returns >ox
+- [x] frrrp returns >ooox
+- [x] fNpUI returns an exception
+- [x] pRf returns xo>
