@@ -2,7 +2,8 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CalculatorTest {
 
@@ -36,7 +37,7 @@ public class CalculatorTest {
         System.out.println(
                 "\tThis call takes place after each @Test is executed");
     }
-    
+
     private boolean isPositive(int number) {
         return number > 0;
     }
@@ -131,6 +132,70 @@ public class CalculatorTest {
         assertTrue(isResultPositive);
     }
 
+    @Test
+    public void ensureBiggerPositiveNrSubtractedFromSmallerPositiveNrIsNegative() {
+        //Arrange
+        int firstOperand = 3;
+        int secondOperand = 2;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    @Test
+    public void ensureSmallerPositiveNrSubtractedFromBiggerPositiveNrIsPositive() {
+        //Arrange
+        int firstOperand = 2;
+        int secondOperand = 3;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    @Test
+    public void ensureNegativeNrSubtractedFromEqualPositiveNrIsPositive() {
+        //Arrange
+        int firstOperand = -3;
+        int secondOperand = 3;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    //subtract positive from equal negative number returns negative number
+    @Test
+    public void ensurePositiveNrSubtractedFromEqualNegativeNrIsNegative() {
+        //Arrange
+        int firstOperand = 4;
+        int secondOperand = -4;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
+        isResultPositive = isNegative(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
 }
 
 

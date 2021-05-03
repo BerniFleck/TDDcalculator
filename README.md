@@ -76,10 +76,10 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 - [ ] add negative number to zero returns negative
 
 ## Test subtract method
-- [ ] subtract bigger positive from smaller positive number returns negative number
-- [ ] subtract smaller positive from bigger positive number returns positive number
-- [ ] subtract equal negative from equal positive number returns positive number
-- [ ] subtract equal positive from equal negative number returns negative number
+- [x] subtract bigger positive from smaller positive number returns negative number
+- [x] subtract smaller positive from bigger positive number returns positive number
+- [x] subtract negative from equal positive number returns positive number
+- [x] subtract positive from equal negative number returns negative number
 - [ ] subtract 2 equal negative numbers from each other returns zero
 - [ ] subtract 2 equal positive numbers from each other returns zero
 - [ ] subtract bigger positive from smaller negative number returns negative number
