@@ -33,6 +33,11 @@ public class Calculator {
     }
 
     public int factorial(int firstOperand) {
-        throw new UnsupportedOperationException();
+
+        int factorial = 1;
+        for (int i = firstOperand; i >= 1; i--) {
+            factorial *= i;
+        }
+        return factorial;
     }
 }

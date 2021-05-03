@@ -259,6 +259,7 @@ public class CalculatorTest {
         // Assert
         assertEquals(actualResult, expectedResult);
     }
+
     /*
     divide positive by positive number returns positive number
     */
@@ -346,6 +347,58 @@ public class CalculatorTest {
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class, () -> calculator.divide(firstOperand, secondOperand));
+    }
+
+    /*
+    positive number factored returns positive number
+    */
+    @Test
+    public void ensurePositiveNrFactoredReturnsPositiveNr() {
+        // Arrange
+        int firstOperand = 12;
+        int calculationResult;
+        boolean isResultPositive;
+
+        // Act
+        calculationResult = calculator.factorial(firstOperand);
+        isResultPositive = isPositive(calculationResult);
+
+        // Assert
+        assertTrue(isResultPositive);
+    }
+
+    /*
+    negative number factored returns one
+    */
+    @Test
+    public void ensureNegativeNrFactoredReturnsOne() {
+        // Arrange
+        int firstOperand = -12;
+        int calculationResult;
+        int expectedResult = 1;
+
+        // Act
+        calculationResult = calculator.factorial(firstOperand);
+
+        // Assert
+        assertEquals(expectedResult, calculationResult);
+    }
+
+    /*
+    zero factored returns one
+    */
+    @Test
+    public void ensureZeroFactoredReturnsOne() {
+        // Arrange
+        int firstOperand = 0;
+        int calculationResult;
+        int expectedResult = 1;
+
+        // Act
+        calculationResult = calculator.factorial(firstOperand);
+
+        // Assert
+        assertEquals(expectedResult, calculationResult);
     }
 }
 

@@ -112,6 +112,6 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 [^1] accomplished in a parameterized test
 
 ## Test factorial method
-- [ ] positive number factored returns positive number
-- [ ] negative number factored returns 1
+- [x] positive number factored returns positive number
+- [x] negative number factored returns 1
 - [ ] zero factored returns 1
