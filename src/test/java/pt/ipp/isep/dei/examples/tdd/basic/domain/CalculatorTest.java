@@ -54,7 +54,7 @@ public class CalculatorTest {
      * Assert: the result is five.
      */
     @Test
-    public void ensurePositiveNumberPlusPositiveNumberIsPositive() {
+    public void ensurePositiveNrPlusPositiveNrIsPositive() {
 
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
@@ -82,7 +82,7 @@ public class CalculatorTest {
      * Assert the sum result should be one.
      */
     @Test
-    public void ensureBiggerPositiveNumberPlusSmallerNegativeNumberIsPositive() {
+    public void ensureBiggerPositiveNrPlusSmallerNegativeNrIsPositive() {
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {
         }.getClass().getEnclosingMethod().getName() + " Test");
@@ -101,7 +101,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void ensureNegativeNumberPlusNegativeNumberIsNegative() {
+    public void ensureNegativeNrPlusNegativeNrIsNegative() {
         //Arrange
         int firstOperand = -3;
         int secondOperand = -2;
