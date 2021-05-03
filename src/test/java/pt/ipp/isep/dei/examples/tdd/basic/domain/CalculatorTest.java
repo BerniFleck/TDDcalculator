@@ -138,14 +138,14 @@ public class CalculatorTest {
         int firstOperand = 3;
         int secondOperand = 2;
         int calculationResult;
-        boolean isResultPositive;
+        boolean isResultNegative;
 
         // Act
         calculationResult = calculator.subtractFirstOperandFromSecondOne(firstOperand, secondOperand);
-        isResultPositive = isNegative(calculationResult);
+        isResultNegative = isNegative(calculationResult);
 
         // Assert
-        assertTrue(isResultPositive);
+        assertTrue(isResultNegative);
     }
 
     @Test
